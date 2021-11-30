@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.0.1] - 2021-11-30
+
 ## [3.1.2] - 2021-11-19
 ### Fixed
 - First event push is now detected correctly, considering that there may be GTM native events on the `dataLayer` array before the first push happens
