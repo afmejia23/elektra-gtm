@@ -224,7 +224,7 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
       )
 
       push({
-        event: 'productImpression',
+        event: 'newProductImpression',
         ecommerce: {
           currencyCode: currency,
           impressions: parsedImpressions,
