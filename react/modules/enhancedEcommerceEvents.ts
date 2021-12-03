@@ -75,7 +75,7 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
             ],
           },
         },
-        event: 'productDetail',
+        event: 'newProductDetail',
       }
 
       push(data)
@@ -107,7 +107,7 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
       }
 
       const data = {
-        event: 'productClick',
+        event: 'newProductClick',
         ecommerce: {
           click: {
             ...list,
@@ -134,9 +134,7 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
       return
     }
 
-    case 'vtex:addToCart': {
-      const { items } = e.data as AddToCartData
-
+    case 'vtex:addToCart': {const { items } = e.data as AddToCartData
       push({
         ecommerce: {
           add: {
@@ -158,7 +156,7 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
           },
           currencyCode: e.data.currency,
         },
-        event: 'addToCart',
+        event: 'newAddToCart',
       })
 
       return
