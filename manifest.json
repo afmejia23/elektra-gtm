@@ -32,12 +32,12 @@
     }
   ],
   "settingsSchema": {
-    "title": "Google Tag Manager",
+    "title": "Elektra Google Tag Manager",
     "type": "object",
     "bindingBounded": true,
     "properties": {
       "gtmId": {
-        "title": "Google Tag Manager",
+        "title": "Elektra Google Tag Manager",
         "description": "Enter the ID (GTM-XXXX) from your Google Tag Manager",
         "type": "string"
       },

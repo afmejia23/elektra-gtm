@@ -186,7 +186,7 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
             })),
           },
         },
-        event: 'removeFromCart',
+        event: 'newRemoveFromCart',
       })
 
       return
