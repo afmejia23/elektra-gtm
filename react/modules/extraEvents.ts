@@ -5,7 +5,7 @@ export async function sendExtraEvents(e: PixelMessage) {
   switch (e.data.eventName) {
     case 'vtex:pageView': {
       push({
-        event: 'pageView',
+        event: 'pageViewVirtual',
         location: e.data.pageUrl,
         page: e.data.pageUrl.replace(e.origin, ''),
         referrer: e.data.referrer,

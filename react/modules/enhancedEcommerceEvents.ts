@@ -192,21 +192,18 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
       return
     }
 
-    case 'vtex:orderPlaced': {
+    case 'vtex:newOrderPlaced': {
       const order = e.data
-
       const ecommerce = {
         purchase: {
           actionField: getPurchaseObjectData(order),
-          products: order.transactionProducts.map((product: ProductOrder) =>
-            getProductObjectData(product)
-          ),
+          products: order.data.transactionProducts?.map((product: ProductOrder) => getProductObjectData(product)),
         },
       }
 
-      push({
+      push({  
         // @ts-ignore
-        event: 'orderPlaced',
+        event: 'newOrderPlaced',
         ...order,
         ecommerce,
       })
@@ -216,7 +213,6 @@ export async function sendEnhancedEcommerceEvents(e: PixelMessage) {
 
     case 'vtex:productImpression': {
       const { currency, list, impressions } = e.data
-
       const parsedImpressions = (impressions || []).map(
         getProductImpressionObjectData(list)
       )
